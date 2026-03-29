@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amit Dabas — Enterprise Data & Analytics Leader</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0F2B4C;
+  --navy-deep: #091D35;
+  --blue: #1B6CB0;
+  --blue-light: #2E86C1;
+  --blue-pale: #E8F1FA;
+  --blue-glow: #3A9AE0;
+  --white: #FFFFFF;
+  --off-white: #F6F8FB;
+  --gray-100: #EDF0F4;
+  --gray-200: #D5DAE1;
+  --gray-400: #8C95A3;
+  --gray-600: #5A6270;
+  --gray-800: #2D3340;
+  --text: #1E2530;
+  --accent-green: #10B981;
+  --accent-amber: #F59E0B;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========== NAVIGATION ========== */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--gray-100);
+  transition: box-shadow 0.3s;
+}
+nav.scrolled { box-shadow: 0 2px 20px rgba(15,43,76,0.08); }
+.nav-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 28px;
+}
+.nav-logo { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--navy); text-decoration: none; }
+.nav-logo span { color: var(--blue); }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a {
+  text-decoration: none; color: var(--gray-600); font-size: 14px; font-weight: 500;
+  transition: color 0.2s; letter-spacing: 0.01em;
+}
+.nav-links a:hover { color: var(--blue); }
+.nav-mobile { display: none; background: none; border: none; cursor: pointer; }
+.nav-mobile svg { width: 24px; height: 24px; stroke: var(--navy); }
+
+/* ========== HERO ========== */
+.hero {
+  padding: 140px 28px 80px;
+  background: linear-gradient(168deg, var(--navy-deep) 0%, var(--navy) 55%, #163A5F 100%);
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; top: -120px; right: -80px;
+  width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(46,134,193,0.12) 0%, transparent 70%);
+}
+.hero::after {
+  content: ''; position: absolute; bottom: -60px; left: -40px;
+  width: 300px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(46,134,193,0.08) 0%, transparent 70%);
+}
+.hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+.hero-badge {
+  display: inline-block; padding: 6px 16px; border-radius: 20px;
+  background: rgba(46,134,193,0.15); border: 1px solid rgba(46,134,193,0.25);
+  color: var(--blue-glow); font-size: 13px; font-weight: 500; margin-bottom: 24px;
+  letter-spacing: 0.03em;
+}
+.hero h1 {
+  font-family: var(--font-display); font-size: 48px; font-weight: 700;
+  color: var(--white); line-height: 1.15; margin-bottom: 16px; max-width: 700px;
+}
+.hero h1 span { color: var(--blue-glow); }
+.hero-sub {
+  font-size: 18px; color: rgba(255,255,255,0.65); max-width: 600px;
+  line-height: 1.6; margin-bottom: 36px;
+}
+.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 24px; border-radius: 8px; font-size: 14px; font-weight: 600;
+  text-decoration: none; transition: all 0.25s; border: none; cursor: pointer;
+  letter-spacing: 0.01em;
+}
+.btn-primary { background: var(--blue); color: white; }
+.btn-primary:hover { background: var(--blue-light); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(27,108,176,0.35); }
+.btn-outline { background: transparent; color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.2); }
+.btn-outline:hover { border-color: rgba(255,255,255,0.5); color: white; }
+
+/* ========== SECTIONS ========== */
+section { padding: 80px 28px; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-label {
+  font-size: 12px; font-weight: 700; color: var(--blue); letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: 10px;
+}
+.section-title {
+  font-family: var(--font-display); font-size: 34px; font-weight: 700;
+  color: var(--navy); line-height: 1.2; margin-bottom: 16px;
+}
+.section-desc { font-size: 16px; color: var(--gray-600); max-width: 600px; margin-bottom: 48px; }
+
+/* ========== ABOUT ========== */
+.about-section { background: var(--off-white); }
+.about-text {
+  font-size: 17px; color: var(--gray-600); line-height: 1.75;
+  max-width: 700px; margin-bottom: 40px;
+}
+
+/* ========== CAPABILITIES ========== */
+.cap-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.cap-card {
+  background: var(--white); border: 1px solid var(--gray-100); border-radius: 12px;
+  padding: 28px 26px; transition: all 0.3s; position: relative; overflow: hidden;
+}
+.cap-card::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+  background: var(--blue); opacity: 0; transition: opacity 0.3s;
+}
+.cap-card:hover { border-color: var(--blue-pale); box-shadow: 0 4px 20px rgba(15,43,76,0.06); }
+.cap-card:hover::before { opacity: 1; }
+.cap-icon {
+  width: 42px; height: 42px; border-radius: 10px; background: var(--blue-pale);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+}
+.cap-icon svg { width: 20px; height: 20px; stroke: var(--blue); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.cap-card h3 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+.cap-card ul { list-style: none; }
+.cap-card li {
+  font-size: 14px; color: var(--gray-600); padding: 3px 0; padding-left: 14px;
+  position: relative; line-height: 1.55;
+}
+.cap-card li::before { content: ''; position: absolute; left: 0; top: 10px; width: 4px; height: 4px; border-radius: 50%; background: var(--blue-light); }
+
+/* ========== RESULTS ========== */
+.results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.result-card {
+  text-align: center; padding: 32px 20px; background: var(--white);
+  border: 1px solid var(--gray-100); border-radius: 12px;
+  transition: all 0.3s;
+}
+.result-card:hover { border-color: var(--blue-pale); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(15,43,76,0.06); }
+.result-number {
+  font-family: var(--font-display); font-size: 38px; font-weight: 700;
+  color: var(--blue); line-height: 1; margin-bottom: 8px;
+}
+.result-label { font-size: 13px; color: var(--gray-600); line-height: 1.45; }
+
+/* ========== TIMELINE ========== */
+.timeline { position: relative; padding-left: 32px; }
+.timeline::before {
+  content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px;
+  width: 2px; background: var(--gray-200);
+}
+.tl-item { position: relative; padding-bottom: 40px; }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-dot {
+  position: absolute; left: -32px; top: 6px; width: 16px; height: 16px;
+  border-radius: 50%; background: var(--white); border: 3px solid var(--blue);
+  z-index: 1;
+}
+.tl-item.current .tl-dot { background: var(--blue); box-shadow: 0 0 0 4px rgba(27,108,176,0.15); }
+.tl-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 6px; }
+.tl-role { font-size: 17px; font-weight: 700; color: var(--navy); }
+.tl-company { font-size: 15px; color: var(--blue); font-weight: 500; }
+.tl-period { font-size: 13px; color: var(--gray-400); font-weight: 500; }
+.tl-promoted {
+  display: inline-block; padding: 2px 10px; border-radius: 4px;
+  background: rgba(16,185,129,0.1); color: var(--accent-green);
+  font-size: 12px; font-weight: 600; margin-left: 8px; letter-spacing: 0.02em;
+}
+.tl-desc { font-size: 14px; color: var(--gray-600); line-height: 1.65; margin-top: 8px; max-width: 650px; }
+.tl-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.tl-tag {
+  padding: 3px 10px; border-radius: 4px; background: var(--blue-pale);
+  color: var(--blue); font-size: 12px; font-weight: 500;
+}
+
+/* ========== CASE STUDIES ========== */
+.cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.case-card {
+  background: var(--white); border: 1px solid var(--gray-100); border-radius: 12px;
+  padding: 28px 24px; transition: all 0.3s; display: flex; flex-direction: column;
+}
+.case-card:hover { border-color: var(--blue-pale); box-shadow: 0 6px 24px rgba(15,43,76,0.06); }
+.case-industry {
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+  margin-bottom: 12px; padding: 4px 10px; border-radius: 4px; display: inline-block; width: fit-content;
+}
+.case-industry.travel { background: #EFF6FF; color: #1D4ED8; }
+.case-industry.consulting { background: #F0FDF4; color: #16A34A; }
+.case-industry.logistics { background: #FFF7ED; color: #C2410C; }
+.case-card h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 10px; line-height: 1.35; }
+.case-card p { font-size: 14px; color: var(--gray-600); line-height: 1.6; flex: 1; }
+.case-result {
+  margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--gray-100);
+  font-size: 14px; font-weight: 600; color: var(--blue);
+}
+
+/* ========== CERTIFICATIONS ========== */
+.certs-section { background: var(--off-white); }
+.certs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.cert-card {
+  background: var(--white); border: 1px solid var(--gray-100); border-radius: 12px;
+  padding: 24px 20px; text-align: center; transition: all 0.3s;
+}
+.cert-card:hover { border-color: var(--blue-pale); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(15,43,76,0.06); }
+.cert-badge {
+  width: 48px; height: 48px; border-radius: 12px; margin: 0 auto 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; font-weight: 700; color: var(--white);
+}
+.cert-badge.db { background: linear-gradient(135deg, #FF3621, #FF6A50); }
+.cert-badge.fabric { background: linear-gradient(135deg, #0078D4, #50A8F0); }
+.cert-badge.pbi { background: linear-gradient(135deg, #F2C811, #E8A000); }
+.cert-badge.alt { background: linear-gradient(135deg, #1C6EA4, #3498DB); }
+.cert-name { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+.cert-detail { font-size: 12px; color: var(--gray-400); }
+
+/* ========== TECH ========== */
+.tech-cloud { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.tech-pill {
+  padding: 8px 18px; border-radius: 8px; background: var(--white);
+  border: 1px solid var(--gray-200); font-size: 14px; font-weight: 500;
+  color: var(--gray-800); transition: all 0.2s;
+}
+.tech-pill:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-pale); }
+.tech-pill.primary { background: var(--blue); color: white; border-color: var(--blue); }
+.tech-pill.primary:hover { background: var(--blue-light); }
+
+/* ========== CONTACT ========== */
+.contact-section { background: var(--navy-deep); color: white; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.contact-title { font-family: var(--font-display); font-size: 32px; font-weight: 700; margin-bottom: 16px; color: white; }
+.contact-desc { font-size: 16px; color: rgba(255,255,255,0.6); margin-bottom: 32px; line-height: 1.6; }
+.contact-item { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.contact-icon {
+  width: 42px; height: 42px; border-radius: 10px;
+  background: rgba(46,134,193,0.15); display: flex; align-items: center; justify-content: center;
+}
+.contact-icon svg { width: 18px; height: 18px; stroke: var(--blue-glow); fill: none; stroke-width: 2; }
+.contact-label { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 2px; }
+.contact-value { font-size: 15px; color: rgba(255,255,255,0.9); font-weight: 500; }
+.contact-value a { color: var(--blue-glow); text-decoration: none; }
+.contact-value a:hover { text-decoration: underline; }
+.contact-roles { padding: 28px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; }
+.contact-roles h3 { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; }
+.role-tag {
+  display: inline-block; padding: 8px 16px; margin: 4px; border-radius: 6px;
+  background: rgba(46,134,193,0.1); border: 1px solid rgba(46,134,193,0.2);
+  color: var(--blue-glow); font-size: 14px; font-weight: 500;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background: var(--navy-deep); border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 24px 28px; text-align: center;
+  font-size: 13px; color: rgba(255,255,255,0.3);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 32px; }
+  .hero-sub { font-size: 16px; }
+  .cap-grid, .results-grid, .certs-grid { grid-template-columns: 1fr 1fr; }
+  .cases-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+  .nav-links { display: none; }
+  .nav-mobile { display: block; }
+  .section-title { font-size: 28px; }
+}
+@media (max-width: 480px) {
+  .cap-grid, .results-grid, .certs-grid { grid-template-columns: 1fr; }
+  .hero { padding: 120px 20px 60px; }
+  section { padding: 60px 20px; }
+}
+
+/* ========== ANIMATIONS ========== */
+.fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s, transform 0.6s; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Amit<span>Dabas</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#capabilities">Capabilities</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#case-studies">Case Studies</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-mobile" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">18+ Years in Data & Analytics</div>
+    <h1>Building enterprise data platforms that organizations <span>actually trust</span></h1>
+    <p class="hero-sub">I lead data platform architecture, governance, and analytics transformation for Fortune 500 companies. Currently building a greenfield data platform at Lumen Technologies.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Get in touch
+      </a>
+      <a href="https://www.linkedin.com/in/amitdabas-05a466286" target="_blank" class="btn btn-outline">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn Profile
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="section-inner fade-up">
+    <div class="section-label">About</div>
+    <h2 class="section-title">From pipelines to platform strategy</h2>
+    <p class="about-text">I lead enterprise data platform initiatives — from architecture and engineering through governance and analytics adoption. My work focuses on building data infrastructure that organizations can scale on, trust, and use to make better decisions.</p>
+    <p class="about-text">Prior to my current role at Lumen, I spent 4 years at Infogain leading data platform delivery for three enterprise clients: a global travel technology company, a leading management consulting firm, and one of the world's largest logistics companies. Before that, 8+ years in data analytics, BI development, and IT consulting across Tableau, Alteryx, Python, SQL, and SAP environments.</p>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="capabilities">
+  <div class="section-inner fade-up">
+    <div class="section-label">What I do</div>
+    <h2 class="section-title">Core capabilities</h2>
+    <p class="section-desc">Four areas where I create impact at the enterprise level.</p>
+    <div class="cap-grid">
+      <div class="cap-card">
+        <div class="cap-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>Platform Architecture & Engineering</h3>
+        <ul>
+          <li>Lakehouse and Data Mesh architecture design</li>
+          <li>Large-scale ETL/ELT on Databricks, Spark, dbt</li>
+          <li>Cloud data warehousing across Azure, AWS, GCP</li>
+          <li>CI/CD automation for data pipelines</li>
+          <li>Real-time analytics infrastructure</li>
+        </ul>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Data Governance & Quality</h3>
+        <ul>
+          <li>Enterprise governance framework design</li>
+          <li>Data ownership, quality gates, lineage tracking</li>
+          <li>Cataloging, documentation, access controls</li>
+          <li>Compliance protocols and regulatory alignment</li>
+          <li>Governance as a business enabler</li>
+        </ul>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">
+          <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <h3>BI Strategy & Adoption</h3>
+        <ul>
+          <li>Enterprise-wide BI transformation</li>
+          <li>Self-service analytics and executive dashboards</li>
+          <li>Stakeholder-driven design and adoption programs</li>
+          <li>Cross-platform: Tableau, Power BI, Looker, Alteryx</li>
+        </ul>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Leadership & Delivery</h3>
+        <ul>
+          <li>Cross-functional teams of 15+ across 8+ projects</li>
+          <li>Client-facing delivery with C-level alignment</li>
+          <li>Team mentoring and capability building</li>
+          <li>Architecture roadmap and investment planning</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY RESULTS -->
+<section id="results" style="background: var(--off-white);">
+  <div class="section-inner fade-up">
+    <div class="section-label">Impact</div>
+    <h2 class="section-title">Key results from recent engagements</h2>
+    <p class="section-desc">Measurable outcomes from enterprise data platform work.</p>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-number">52%</div>
+        <div class="result-label">BI adoption improvement across 500+ users</div>
+      </div>
+      <div class="result-card">
+        <div class="result-number">40%</div>
+        <div class="result-label">Reduction in data latency through cloud redesign</div>
+      </div>
+      <div class="result-card">
+        <div class="result-number">60%</div>
+        <div class="result-label">Improvement in query performance</div>
+      </div>
+      <div class="result-card">
+        <div class="result-number">50%</div>
+        <div class="result-label">Faster release cycles via CI/CD automation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE TIMELINE -->
+<section id="experience">
+  <div class="section-inner fade-up">
+    <div class="section-label">Career</div>
+    <h2 class="section-title">Professional experience</h2>
+    <p class="section-desc">18+ years from hands-on analytics to enterprise data leadership.</p>
+    <div class="timeline">
+      <div class="tl-item current">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <div><span class="tl-role">Sr. Data Analytics Manager</span> <span class="tl-company">Lumen Technologies</span></div>
+          <span class="tl-period">Sep 2025 — Present</span>
+        </div>
+        <p class="tl-desc">Leading greenfield data platform build for a Fortune 500 telecom — Fabric Lakehouse architecture, dbt transformation layer, governance framework, and team of 10+.</p>
+        <div class="tl-tags"><span class="tl-tag">Microsoft Fabric</span><span class="tl-tag">Databricks</span><span class="tl-tag">dbt</span><span class="tl-tag">Power BI</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <div><span class="tl-role">Technical Manager</span> <span class="tl-company">Infogain</span><span class="tl-promoted">Promoted</span></div>
+          <span class="tl-period">Sep 2023 — Sep 2025</span>
+        </div>
+        <p class="tl-desc">Led data delivery for a global travel tech company and a leading consulting firm. Drove 52% BI adoption, architected 10TB+ daily pipelines, and established governance frameworks.</p>
+        <div class="tl-tags"><span class="tl-tag">Databricks</span><span class="tl-tag">Spark</span><span class="tl-tag">dbt</span><span class="tl-tag">Tableau</span><span class="tl-tag">Power BI</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <div><span class="tl-role">Technology Specialist</span> <span class="tl-company">Infogain</span></div>
+          <span class="tl-period">Sep 2021 — Sep 2023</span>
+        </div>
+        <p class="tl-desc">Built the data platform for one of the world's largest logistics companies. Designed cloud warehouse on Azure, created the first governance framework adopted org-wide.</p>
+        <div class="tl-tags"><span class="tl-tag">Azure Synapse</span><span class="tl-tag">Spark</span><span class="tl-tag">Tableau</span><span class="tl-tag">Power BI</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <div><span class="tl-role">Data Analyst</span> <span class="tl-company">Prastav Communication</span></div>
+          <span class="tl-period">Sep 2020 — Aug 2021</span>
+        </div>
+        <p class="tl-desc">Financial analytics dashboards in Tableau, Alteryx ETL workflows, Python performance automation.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <div><span class="tl-role">Data Analyst</span> <span class="tl-company">WSNE Consulting</span></div>
+          <span class="tl-period">Feb 2015 — Jul 2020</span>
+        </div>
+        <p class="tl-desc">HR/BI analytics for a global fintech company, ML project for a steel manufacturer, first team management experience (7 analysts).</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <div><span class="tl-role">Earlier Career</span> <span class="tl-company">IT Consulting & SAP</span></div>
+          <span class="tl-period">2008 — 2015</span>
+        </div>
+        <p class="tl-desc">IT Consultant at Reverse Logistics Co., ABAP Consultant at Visnova Solutions, Technical Consultant at Vishal Retail. Built the technical foundation in SAP, BI, and data systems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="case-studies" style="background: var(--off-white);">
+  <div class="section-inner fade-up">
+    <div class="section-label">Case Studies</div>
+    <h2 class="section-title">Enterprise impact stories</h2>
+    <p class="section-desc">Three engagements that represent the kind of work I do.</p>
+    <div class="cases-grid">
+      <div class="case-card">
+        <span class="case-industry consulting">Management Consulting</span>
+        <h3>Transforming BI adoption for 500+ consultants</h3>
+        <p>A leading consulting firm had dashboards nobody used. Instead of rebuilding them, we embedded analytics into existing workflows and ran hands-on enablement focused on real use cases — not tool training.</p>
+        <div class="case-result">20% → 52% adoption, 34% engagement lift</div>
+      </div>
+      <div class="case-card">
+        <span class="case-industry travel">Travel Technology</span>
+        <h3>10TB+ daily pipelines for a global travel platform</h3>
+        <p>Architected ETL/ELT pipelines on Databricks and Spark with near real-time refresh for millions of daily transactions. Introduced dbt for standardized transformations and established governance across distributed teams.</p>
+        <div class="case-result">10TB+ daily, near real-time refresh</div>
+      </div>
+      <div class="case-card">
+        <span class="case-industry logistics">Logistics</span>
+        <h3>First governance framework for a Fortune-scale logistics company</h3>
+        <p>The existing data setup was fragmented with no ownership or lineage. Built the first formal governance framework — ownership, quality gates, lineage, compliance — that became the org-wide standard.</p>
+        <div class="case-result">40% less latency, 60% faster queries</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="certs-section" id="certifications">
+  <div class="section-inner fade-up">
+    <div class="section-label">Credentials</div>
+    <h2 class="section-title">Certifications</h2>
+    <p class="section-desc">Industry-recognized certifications across data engineering, analytics, and cloud platforms.</p>
+    <div class="certs-grid">
+      <div class="cert-card">
+        <div class="cert-badge db">DB</div>
+        <div class="cert-name">Databricks Certified</div>
+        <div class="cert-detail">Data Engineer Associate</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge fabric">F</div>
+        <div class="cert-name">Microsoft Fabric</div>
+        <div class="cert-detail">Analytics Engineer DP-600</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge pbi">PBI</div>
+        <div class="cert-name">Power BI</div>
+        <div class="cert-detail">Data Analyst PL-300</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge alt">A</div>
+        <div class="cert-name">Alteryx</div>
+        <div class="cert-detail">Designer Advanced</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section id="tech" style="background: var(--white);">
+  <div class="section-inner fade-up" style="text-align: center;">
+    <div class="section-label">Technology</div>
+    <h2 class="section-title">Tech stack</h2>
+    <p class="section-desc" style="margin: 0 auto 40px;">Tools and platforms I work with day to day.</p>
+    <div class="tech-cloud">
+      <span class="tech-pill primary">Databricks</span>
+      <span class="tech-pill primary">Microsoft Fabric</span>
+      <span class="tech-pill primary">dbt</span>
+      <span class="tech-pill primary">Apache Spark</span>
+      <span class="tech-pill">Delta Lake</span>
+      <span class="tech-pill">Azure Synapse</span>
+      <span class="tech-pill">ADLS Gen2</span>
+      <span class="tech-pill">Azure Data Factory</span>
+      <span class="tech-pill">AWS</span>
+      <span class="tech-pill">GCP</span>
+      <span class="tech-pill">Tableau</span>
+      <span class="tech-pill">Power BI</span>
+      <span class="tech-pill">Looker</span>
+      <span class="tech-pill">Alteryx</span>
+      <span class="tech-pill">Python</span>
+      <span class="tech-pill">SQL</span>
+      <span class="tech-pill">Spark SQL</span>
+      <span class="tech-pill">CI/CD</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <h2 class="contact-title">Let's connect</h2>
+        <p class="contact-desc">I am currently exploring Principal Architect, Director of Data & Analytics, or Head of Data opportunities where I can drive platform strategy and governance at an organizational level.</p>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:02amitdabas@gmail.com">02amitdabas@gmail.com</a></div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div><div class="contact-label">Phone</div><div class="contact-value">+91-8700846878</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
+          <div><div class="contact-label">LinkedIn</div><div class="contact-value"><a href="https://www.linkedin.com/in/amitdabas-05a466286" target="_blank">linkedin.com/in/amitdabas</a></div></div>
+        </div>
+      </div>
+      <div class="contact-roles">
+        <h3>Roles I'm exploring</h3>
+        <span class="role-tag">Principal Data Architect</span>
+        <span class="role-tag">Director of Data & Analytics</span>
+        <span class="role-tag">Head of Data</span>
+        <span class="role-tag">Director, Data Engineering</span>
+        <span class="role-tag">VP, Data & Analytics</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="section-inner">&copy; 2026 Amit Dabas. Built with purpose.</div>
+</footer>
+
+<!-- EDUCATION -->
+<style>
+.edu-section { background: var(--white); }
+</style>
+
+<script>
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Fade-up on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.15 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
